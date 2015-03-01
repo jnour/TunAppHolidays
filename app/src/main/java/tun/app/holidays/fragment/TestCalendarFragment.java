@@ -95,6 +95,8 @@ public class TestCalendarFragment extends Fragment implements View.OnClickListen
         }
 
         mHoldayList = SharedPreferenceManager.getInstance().getHolidayArrayList();
+
+        //Test Commit Git Android Studio
     }
 
     @Override
