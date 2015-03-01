@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">TunAppHolidays</string>
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Réglages</string>
+    <string name="title_section4">Solde Congés</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_example">Example action</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_blank_fragment">Hello Calendar fragment</string>
+
+    <!-- Screen Settings -->
+    <string name="settings_label_nbr_payed_holiday">Congés payés</string>
+    <string name="settings_label_nbr_rtt_holiday">Congés RTT</string>
+    <string name="settings_label_nbr_maternity_holiday">Congés maternité</string>
+    <string name="settings_label_nbr_optianl_holiday">Congés Option</string>
+
+    <string name="settings_label_nbr_ex_25">25</string>
+    <string name="settings_label_nbr_ex_10">10</string>
+    <!-- Screen Settings -->
+
+    <!-- Screen Holiday Balance -->
+    <string name="balance_label_row_current">Solde Actuel</string>
+    <string name="balance_label_row_used">Congés Pris</string>
+    <string name="balance_label_row_total">Solde Total</string>
+    <!-- Screen Holiday Balance -->
+
+    <!-- Screen Dialog Set Holiday  -->
+    <string name="dialog_start_holiday">Premier jour :</string>
+    <string name="dialog_end_holiday">Dernier jour :</string>
+    <string name="dialog_start_label">Matin</string>
+    <string name="dialog_end_label">Aprés-midi</string>
+
+    <!-- Screen Dialog Set Holiday -->
+
+
+    <!-- Screen Holiday Balance -->
+
+    <!--  -->
+
+
+</resources>

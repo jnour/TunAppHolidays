@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/holi_blue"
+        >
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_weight="1"
+                style="@style/HoliLabelTable"
+                android:layout_column="0"/>
+            <TextView
+                android:id="@+id/balance_label_current"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                style="@style/HoliLabelTable"
+                android:text="@string/balance_label_row_current"
+                android:layout_column="1" />
+            <TextView
+                android:id="@+id/balance_label_used"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                style="@style/HoliLabelTable"
+                android:text="@string/balance_label_row_used"
+                android:layout_column="2" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <TextView
+                android:id="@+id/balance_label_cp"
+                android:layout_weight="1"
+                android:layout_height="fill_parent"
+                style="@style/HoliLabelTable"
+                android:text="@string/settings_label_nbr_payed_holiday"
+                android:layout_column="0" />
+
+            <TextView
+                android:id="@+id/balance_nbr_cp_current"
+                android:layout_weight="1"
+                android:layout_height="fill_parent"
+                style="@style/HoliLabelTable"
+                android:text="@string/settings_label_nbr_ex_25"
+                android:layout_column="1"
+                android:gravity="center"/>
+            <TextView
+                android:id="@+id/balance_nbr_cp_used"
+                style="@style/HoliLabelTable"
+                android:layout_weight="1"
+                android:layout_height="fill_parent"
+                android:text="@string/settings_label_nbr_ex_10"
+                android:layout_column="2"
+                android:gravity="center" />
+        </TableRow>
+
+
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <TextView
+                android:id="@+id/balance_label_rtt"
+                android:layout_weight="1"
+                android:layout_height="fill_parent"
+                style="@style/HoliLabelTable"
+                android:text="@string/settings_label_nbr_rtt_holiday"
+                android:layout_column="0" />
+
+            <TextView
+                android:id="@+id/balance_nbr_rtt_current"
+                android:layout_weight="1"
+                android:layout_height="fill_parent"
+                style="@style/HoliLabelTable"
+                android:text="@string/settings_label_nbr_ex_10"
+                android:layout_column="1"
+                android:gravity="center"/>
+            <TextView
+                android:id="@+id/balance_nbr_rtt_used"
+                android:layout_weight="1"
+                android:layout_height="fill_parent"
+                style="@style/HoliLabelTable"
+                android:text="@string/settings_label_nbr_ex_10"
+                android:layout_column="2"
+                android:gravity="center" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <TextView
+                android:id="@+id/balance_label_total"
+                android:layout_weight="1"
+                android:layout_height="fill_parent"
+                style="@style/HoliRowTotalTable"
+                android:text="@string/balance_label_row_total"
+                android:layout_column="0"/>
+
+            <TextView
+                android:id="@+id/balance_nbr_total_current"
+                android:layout_weight="1"
+                android:layout_height="fill_parent"
+                style="@style/HoliRowTotalTable"
+                android:text="@string/settings_label_nbr_ex_10"
+                android:layout_column="1"
+                android:gravity="center"/>
+            <TextView
+                android:id="@+id/balance_nbr_total_used"
+                android:layout_weight="1"
+                android:layout_height="fill_parent"
+                style="@style/HoliRowTotalTable"
+                android:text="@string/settings_label_nbr_ex_10"
+                android:layout_column="2"
+                android:gravity="center" />
+        </TableRow>
+
+    </TableLayout>
+</LinearLayout>

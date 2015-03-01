@@ -1,0 +1,34 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+
+
+    <style name="HoliLabel" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textColor">@color/holi_blue</item>
+        <item name="android:typeface">monospace</item>
+    </style>
+
+    <style name="HoliLabelSmall" parent="@android:style/TextAppearance.Small">
+        <item name="android:textColor">@color/holi_blue</item>
+        <item name="android:typeface">monospace</item>
+    </style>
+
+    <style name="HoliLabelTable" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textColor">@color/holi_blue</item>
+        <item name="android:typeface">monospace</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:background">@drawable/table_cell_bg</item>
+    </style>
+
+    <style name="HoliRowTotalTable" >
+        <item name="android:textColor">@color/holi_blue</item>
+        <item name="android:typeface">monospace</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:background">@drawable/table_cell_bg</item>
+    </style>
+</resources>
