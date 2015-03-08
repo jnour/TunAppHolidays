@@ -41,11 +41,11 @@
                 <TextView
                     android:id="@+id/settings_txt_nbr_cp"
                     style="@style/HoliLabel"
-                    android:layout_width="wrap_content"
+                    android:layout_width="40dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
-                    android:gravity="center_vertical"
+                    android:gravity="center"
                     android:text="@string/settings_label_nbr_ex_25" />
                 <Button
                     android:id="@+id/settings_butt_holi_payed_more"
@@ -82,11 +82,11 @@
                 <TextView
                     android:id="@+id/settings_txt_nbr_rtt"
                     style="@style/HoliLabel"
-                    android:layout_width="wrap_content"
+                    android:layout_width="40dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
-                    android:gravity="center_vertical"
+                    android:gravity="center"
                     android:text="@string/settings_label_nbr_ex_10" />
                 <Button
                     android:id="@+id/settings_butt_holi_rtt_more"
@@ -118,7 +118,7 @@
             android:id="@+id/settings_butt_confirm"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:background="@drawable/ic_butt_confirm"/>
+            android:background="@drawable/selector_butt_confirm"/>
     </LinearLayout>
 
 </LinearLayout>

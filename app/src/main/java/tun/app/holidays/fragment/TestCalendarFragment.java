@@ -3,6 +3,7 @@ package tun.app.holidays.fragment;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Build;
@@ -23,6 +24,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import tun.app.holidays.activity.PickHolidayActivity;
 import tun.app.holidays.data.SharedPreferenceManager;
 import tun.app.holidays.model.Holiday;
 import tun.app.holidays.utils.CalendarUtils;
@@ -267,7 +269,9 @@ public class TestCalendarFragment extends Fragment implements View.OnClickListen
     @Override
     public void onClick(View view) {
         if(view==mButtPopUP){
-            onPopUpCalClick();
+            //onPopUpCalClick();
+            Intent pickHolidayAct = new Intent(getActivity(), PickHolidayActivity.class);
+            startActivity(pickHolidayAct);
         }
 
     }

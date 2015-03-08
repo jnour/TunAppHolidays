@@ -8,7 +8,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+
 import tun.app.holidays.R;
+import tun.app.holidays.data.SharedPreferenceManager;
+import tun.app.holidays.model.Holiday;
+import tun.app.holidays.model.HolidayType;
+import tun.app.holidays.utils.CalendarUtils;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -30,6 +37,16 @@ public class BalanceFragment extends Fragment {
     private String mParam2;
 
     private OnFragmentBalanceListener mListener;
+    private TextView mTxtBalanceCp;
+    private TextView mTxtBalanceCpUsed;
+
+    private TextView mTxtBalanceRtt;
+    private TextView mTxtBalanceRttUsed;
+
+    private TextView mTxtBalanceHoliday;
+    private TextView mTxtBalanceHolidayUsed;
+
+    private ArrayList<Holiday> mListHolidays;
 
     /**
      * Use this factory method to create a new instance of
@@ -59,12 +76,24 @@ public class BalanceFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+
+        mListHolidays = SharedPreferenceManager.getInstance().getHolidayArrayList();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View fgView = inflater.inflate(R.layout.fragment_holiday_balance, container, false);
+
+        mTxtBalanceCp = (TextView)fgView.findViewById(R.id.balance_nbr_cp_current);
+         mTxtBalanceCpUsed = (TextView)fgView.findViewById(R.id.balance_nbr_cp_used);
+         mTxtBalanceRtt = (TextView)fgView.findViewById(R.id.balance_nbr_rtt_current);
+        mTxtBalanceRttUsed = (TextView)fgView.findViewById(R.id.balance_nbr_rtt_used);
+        mTxtBalanceHoliday = (TextView)fgView.findViewById(R.id.balance_nbr_total_current);
+        mTxtBalanceHolidayUsed = (TextView)fgView.findViewById(R.id.balance_nbr_total_used);
+
+        updateView();
 
         return fgView;
     }
@@ -93,16 +122,28 @@ public class BalanceFragment extends Fragment {
         mListener = null;
     }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
+
+
+
+
+    private void updateView(){
+
+        int balanceCP = CalendarUtils.getBalanceCurrentCP(mListHolidays)-mListHolidays.size();
+        int balanceCPUsed =mListHolidays.size()+ CalendarUtils.getBalanceUsed(mListHolidays,HolidayType.HOLIDAY_PAYED);
+        mTxtBalanceCp.setText(""+balanceCP);
+        mTxtBalanceCpUsed.setText(""+balanceCPUsed);
+
+        int balanceRTT = CalendarUtils.getBalanceCurrentRtt(mListHolidays);
+        int balanceRTTUsed = CalendarUtils.getBalanceUsed(mListHolidays,HolidayType.HOLIDAY_RTT);
+        mTxtBalanceRtt.setText(""+ balanceRTT);
+        mTxtBalanceRttUsed.setText(""+balanceRTTUsed);
+
+
+        mTxtBalanceHoliday.setText(""+(balanceCP+balanceRTT));
+
+        mTxtBalanceHolidayUsed.setText(""+(balanceCPUsed+balanceRTTUsed));
+
+    }
     public interface OnFragmentBalanceListener {
         // TODO: Update argument type and name
         public void onFragmentInteraction(Uri uri);

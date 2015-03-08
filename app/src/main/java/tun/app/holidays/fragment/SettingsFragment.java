@@ -52,6 +52,7 @@ public class SettingsFragment extends Fragment implements View.OnClickListener{
     private Button mButtLessHoliPater;
 
     private LinearLayout mLayoutEdit;
+    private Button mButtConfirm;
 
     /**
      * Use this factory method to create a new instance of
@@ -109,6 +110,12 @@ public class SettingsFragment extends Fragment implements View.OnClickListener{
 
         mLayoutEdit = (LinearLayout)fgView.findViewById(R.id.settings_layout_butt_edit);
 
+        mButtConfirm =(Button)fgView.findViewById(R.id.settings_butt_confirm);
+        mButtConfirm.setOnClickListener(this);
+
+        updateView();
+
+
         return fgView;
     }
 
@@ -141,40 +148,46 @@ public class SettingsFragment extends Fragment implements View.OnClickListener{
         if(view ==mButtMoreHoliCP){
             int nbr = Integer.parseInt(mTxtHoliCP.getText().toString());
                 mTxtHoliCP.setText(""+(nbr+1));
+
+
         }
         if(view ==mButtLessHoliCP){
             int nbr = Integer.parseInt(mTxtHoliCP.getText().toString());
             if(nbr>0){
-                mTxtHoliCP.setText(""+(nbr-1));
+                mTxtHoliCP.setText("" + (nbr - 1));
             }
         }
         if(view ==mButtMoreHoliRTT){
             int nbr = Integer.parseInt(mTxtHoliRTT.getText().toString());
-            mTxtHoliRTT.setText(""+(nbr+1));
+            mTxtHoliRTT.setText("" + (nbr + 1));
         }
         if(view ==mButtLessHoliRTT){
             int nbr = Integer.parseInt(mTxtHoliRTT.getText().toString());
             if(nbr>0){
-                mTxtHoliRTT.setText(""+(nbr-1));
+                mTxtHoliRTT.setText("" + (nbr - 1));
             }
         }
 
 
+        if (view==mButtConfirm){
+            int nbrRtt = Integer.parseInt(mTxtHoliRTT.getText().toString());
+            int nbrCP = Integer.parseInt(mTxtHoliCP.getText().toString());
+            SharedPreferenceManager.getInstance().setNbrPayedHoliday(nbrCP);
+            SharedPreferenceManager.getInstance().setNbrRttHoliday(nbrRtt);
+            SharedPreferenceManager.getInstance().savePrefsData();
+            mLayoutEdit.setVisibility(View.GONE);
+        }else{
+            mLayoutEdit.setVisibility(View.VISIBLE);
+        }
 
 
-        mLayoutEdit.setVisibility(View.VISIBLE);
     }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
+    private void updateView(){
+
+        mTxtHoliRTT.setText(""+SharedPreferenceManager.getInstance().getNbrRttHoliday());
+        mTxtHoliCP.setText(""+SharedPreferenceManager.getInstance().getNbrPayedHoliday());
+    }
     public interface OnFragmentSettingsListener {
         // TODO: Update argument type and name
         public void onFragmentSettingsChanged(Uri uri);

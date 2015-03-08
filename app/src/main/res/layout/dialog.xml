@@ -10,87 +10,112 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:paddingBottom="16dp"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:paddingBottom="46dp"
         android:scrollbarStyle="outsideOverlay"
         android:clipToPadding="false"
         android:background="#FFFFFF"
         />
+
     <LinearLayout
-        android:id="@+id/dialog_layout_param_holiday"
+        android:id="@+id/layout_holiday_option"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:visibility="gone">
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
+        <LinearLayout
+            android:id="@+id/dialog_layout_param_holiday"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/HoliLabelSmall"
-            android:text="@string/dialog_start_holiday"/>
-        <RadioGroup
-            android:id="@+id/dialog_radio_group_first_day"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:padding="5dp">
-            <RadioButton
-                android:layout_width="wrap_content"
+            android:visibility="visible">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
                 style="@style/HoliLabelSmall"
-                android:checked="true"
-                android:layout_marginRight="5dp"
-                android:text="@string/dialog_start_label"
-                android:id="@+id/dialog_radio_start_first_day" />
-            <RadioButton
+                android:text="@string/dialog_start_holiday"/>
+            <RadioGroup
+                android:id="@+id/dialog_radio_group_first_day"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                style="@style/HoliLabelSmall"
-                android:text="@string/dialog_end_label"
-                android:id="@+id/dialog_radio_end_first_day" />
-        </RadioGroup>
-    </LinearLayout>
-    <LinearLayout
-        android:id="@+id/dialog_layout_param_last_holiday"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:visibility="gone">
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
+                android:orientation="horizontal"
+                android:padding="5dp">
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/HoliLabelSmall"
+                    android:checked="true"
+                    android:layout_marginRight="5dp"
+                    android:text="@string/dialog_start_label"
+                    android:id="@+id/dialog_radio_start_first_day" />
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/HoliLabelSmall"
+                    android:text="@string/dialog_end_label"
+                    android:id="@+id/dialog_radio_end_first_day" />
+            </RadioGroup>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/dialog_layout_param_last_holiday"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/HoliLabelSmall"
-            android:text="@string/dialog_end_holiday"/>
-        <RadioGroup
-            android:id="@+id/dialog_radio_group_last_day"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:padding="5dp">
-            <RadioButton
-                android:layout_width="wrap_content"
+            android:visibility="visible">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
                 style="@style/HoliLabelSmall"
-                android:layout_marginRight="5dp"
-                android:text="@string/dialog_start_label"
-                android:id="@+id/dialog_radio_start_last_day" />
-            <RadioButton
+                android:text="@string/dialog_end_holiday"/>
+            <RadioGroup
+                android:id="@+id/dialog_radio_group_last_day"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                style="@style/HoliLabelSmall"
-                android:checked="true"
-                android:text="@string/dialog_end_label"
-                android:id="@+id/dialog_radio_end_last_day" />
-        </RadioGroup>
+                android:orientation="horizontal"
+                android:padding="5dp">
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/HoliLabelSmall"
+                    android:layout_marginRight="5dp"
+                    android:text="@string/dialog_start_label"
+                    android:id="@+id/dialog_radio_start_last_day" />
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/HoliLabelSmall"
+                    android:checked="true"
+                    android:text="@string/dialog_end_label"
+                    android:id="@+id/dialog_radio_end_last_day" />
+            </RadioGroup>
+        </LinearLayout>
+        <include
+            android:id="@+id/pick_layout_repartition"
+            layout="@layout/layout_holiday_repartition"
+            android:visibility="gone"/>
+        <LinearLayout
+            android:id="@+id/pick_layout_butt_edit"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <Button
+                android:id="@+id/pick_butt_confirm"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/selector_butt_confirm"/>
+        </LinearLayout>
+
     </LinearLayout>
-
-
 </LinearLayout>
